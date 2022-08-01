@@ -4,6 +4,8 @@ from django.contrib.auth.models import PermissionsMixin, UserManager, AbstractUs
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from apps.category_employee import CategoryEmployee
+
 
 class User(AbstractUser, PermissionsMixin):
     GENDER_CHO0ICE = (
@@ -33,21 +35,17 @@ class User(AbstractUser, PermissionsMixin):
         editable=False
     )
 
+    is_admin = models.BooleanField(
+        default=False,
+    )
+
+    date_of_birth = models.DateField()
+
     profile_image = models.ImageField(
         upload_to='profile_images/',
         max_length=255,
         blank=True,
         null=True
-    )
-
-    username = models.CharField(
-        _('username'),
-        max_length=100,
-        unique=True,
-        help_text=_('Required. 100 characters or fewer. Letters, digits and @/./+/-/_ only.'),
-        error_messages={
-            'unique': _("A user with that username already exists."),
-        },
     )
 
     gender = models.CharField(
@@ -76,7 +74,7 @@ class User(AbstractUser, PermissionsMixin):
     )
 
     category_employee = models.ForeignKey(
-        'CategoryEmployee',  # Need change
+        CategoryEmployee,
         on_delete=models.CASCADE,
         blank=True,
         null=True

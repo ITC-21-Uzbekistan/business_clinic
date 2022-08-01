@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from apps.category_employee import CategoryEmployee
+
+
+@admin.register(CategoryEmployee)
+class CategoryEmployeeAdmin(admin.ModelAdmin):
+    list_display = [
+        'id',
+        'name',
+    ]
