@@ -15,3 +15,7 @@ class DirectionMedicine(models.Model):
         null=True,
         blank=True
     )
+
+    class Meta:
+        db_table = 'direction_medicine'
+        ordering = ['id']

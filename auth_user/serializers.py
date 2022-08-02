@@ -11,6 +11,7 @@ class UserSerializer(ModelSerializer):
             'password',
             'first_name',
             'last_name',
+            'date_of_birth',
             'email',
             'profile_image',
             'is_admin',
@@ -20,7 +21,7 @@ class UserSerializer(ModelSerializer):
             'region',
             'phone',
             'passport',
-            # 'category_employee',
+            'category_employee',
             'date_joined',
         )
 

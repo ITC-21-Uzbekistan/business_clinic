@@ -96,8 +96,6 @@ class User(AbstractUser, PermissionsMixin):
         null=True
     )
 
-    # REQUIRED_FIELDS = ["emai"]
-
     class Meta:
         db_table = 'user'
         verbose_name = _("user")
