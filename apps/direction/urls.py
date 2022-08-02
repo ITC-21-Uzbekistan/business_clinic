@@ -4,6 +4,6 @@ from apps.direction.api.business.direction_view import DirectionMedicineListCrea
     DirectionMedicineRetrieveUpdateDestroyAPIView
 
 urlpatterns = [
-    path('business/direction-medicine/', DirectionMedicineListCreateAPIView.as_view()),
-    path('business/direction-medicine/<str:pk>/', DirectionMedicineRetrieveUpdateDestroyAPIView.as_view()),
+    path('business/', DirectionMedicineListCreateAPIView.as_view()),
+    path('business/<str:pk>/', DirectionMedicineRetrieveUpdateDestroyAPIView.as_view()),
 ]

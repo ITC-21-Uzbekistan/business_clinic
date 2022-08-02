@@ -4,6 +4,6 @@ from apps.category_employee.api.business import CategoryEmployeeListCreateAPIVie
     CategoryEmployeeRetrieveUpdateDestroyAPIView
 
 urlpatterns = [
-    path('business/category-employee/', CategoryEmployeeListCreateAPIView.as_view()),
-    path('business/category-employee/<str:pk>/', CategoryEmployeeRetrieveUpdateDestroyAPIView),
+    path('business/', CategoryEmployeeListCreateAPIView.as_view()),
+    path('business/<str:pk>/', CategoryEmployeeRetrieveUpdateDestroyAPIView.as_view()),
 ]

@@ -50,14 +50,14 @@ INSTALLED_APPS = [
 
     # apps
     'auth_user',
-    # 'apps.accounting',
+    'apps.accounting',
     'apps.category_employee',
     'apps.direction',
     # 'apps.enrollment',
     # 'apps.result',
     # 'apps.room',
     # 'apps.schedule',
-    # 'apps.service',
+    'apps.service',
 ]
 
 MIDDLEWARE = [
