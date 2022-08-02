@@ -1,1 +1,1 @@
-from .category_employee_serializer import CategoryEmployeeSerializer
+from .direction_serializer import DirectionMedicineSerializer

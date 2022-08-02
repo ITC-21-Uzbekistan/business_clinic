@@ -49,14 +49,15 @@ INSTALLED_APPS = [
     'corsheaders',
 
     # apps
-    'apps.accounting',
+    'auth_user',
+    # 'apps.accounting',
     'apps.category_employee',
     'apps.direction',
-    'apps.enrollment',
-    'apps.result',
-    'apps.room',
-    'apps.schedule',
-    'apps.service',
+    # 'apps.enrollment',
+    # 'apps.result',
+    # 'apps.room',
+    # 'apps.schedule',
+    # 'apps.service',
 ]
 
 MIDDLEWARE = [

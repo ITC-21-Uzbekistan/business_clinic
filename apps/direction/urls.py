@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.direction.api.business.category_employee_view import DirectionMedicineListCreateAPIView, \
+from apps.direction.api.business.direction_view import DirectionMedicineListCreateAPIView, \
     DirectionMedicineRetrieveUpdateDestroyAPIView
 
 urlpatterns = [

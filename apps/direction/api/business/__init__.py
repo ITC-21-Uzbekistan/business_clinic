@@ -1,1 +1,1 @@
-from .category_employee_view import CategoryEmployeeListCreateAPIView, CategoryEmployeeRetrieveUpdateDestroyAPIView
+from .direction_view import DirectionMedicineListCreateAPIView, DirectionMedicineRetrieveUpdateDestroyAPIView

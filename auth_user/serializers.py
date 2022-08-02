@@ -20,7 +20,7 @@ class UserSerializer(ModelSerializer):
             'region',
             'phone',
             'passport',
-            'category_employee',
+            # 'category_employee',
             'date_joined',
         )
 
@@ -47,9 +47,16 @@ class UserSerializer(ModelSerializer):
         instance.region = validated_data.get('region', instance.region)
         instance.phone = validated_data.get('phone', instance.phone)
         instance.passport = validated_data.get('passport', instance.passport)
-        instance.category_employee = validated_data.get('category_employee', instance.category_employee)
+        # instance.category_employee = validated_data.get('category_employee', instance.category_employee)
         password = validated_data.get('password')
         if password:
             instance.set_password(password)
         instance.save()
         return instance
+
+
+class LoginSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username',  'password')  # 'password'
+        extra_kwargs = {'password': {'write_only': True}}

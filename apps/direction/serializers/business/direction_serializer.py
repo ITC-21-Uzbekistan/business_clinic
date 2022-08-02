@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from apps.direction import DirectionMedicine
+from apps.direction.models import DirectionMedicine
 
 
 class DirectionMedicineSerializer(ModelSerializer):

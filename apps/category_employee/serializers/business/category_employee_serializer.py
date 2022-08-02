@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from apps.category_employee import CategoryEmployee
+from apps.category_employee.models import CategoryEmployee
 
 
 class CategoryEmployeeSerializer(ModelSerializer):

@@ -1,8 +1,8 @@
 from rest_framework.generics import ListCreateAPIView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from apps.direction import DirectionMedicine
-from apps.direction.serializers.business.category_employee_serializer import DirectionMedicineSerializer
+from apps.direction.models import DirectionMedicine
+from apps.direction.serializers.business.direction_serializer import DirectionMedicineSerializer
 
 
 class DirectionMedicineListCreateAPIView(ListCreateAPIView):

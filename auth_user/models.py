@@ -1,10 +1,11 @@
 import uuid
 
 from django.contrib.auth.models import PermissionsMixin, UserManager, AbstractUser
+from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from apps.category_employee import CategoryEmployee
+from apps.category_employee.models import CategoryEmployee
 
 
 class User(AbstractUser, PermissionsMixin):
@@ -29,10 +30,25 @@ class User(AbstractUser, PermissionsMixin):
     )
     objects = UserManager()
 
+    username_validator = UnicodeUsernameValidator()
+
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
         editable=False
+    )
+
+    username = models.CharField(
+        _("username"),
+        max_length=150,
+        unique=True,
+        help_text=_(
+            "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+        ),
+        validators=[username_validator],
+        error_messages={
+            "unique": _("A user with that username already exists."),
+        },
     )
 
     is_admin = models.BooleanField(
@@ -80,7 +96,7 @@ class User(AbstractUser, PermissionsMixin):
         null=True
     )
 
-    REQUIRED_FIELDS = ["username"]
+    # REQUIRED_FIELDS = ["emai"]
 
     class Meta:
         db_table = 'user'
