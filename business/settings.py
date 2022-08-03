@@ -53,10 +53,10 @@ INSTALLED_APPS = [
     'apps.accounting',
     'apps.category_employee',
     'apps.direction',
-    # 'apps.enrollment',
-    # 'apps.result',
-    # 'apps.room',
-    # 'apps.schedule',
+    'apps.enrollment',
+    'apps.result',
+    'apps.room',
+    'apps.schedule',
     'apps.service',
 ]
 
